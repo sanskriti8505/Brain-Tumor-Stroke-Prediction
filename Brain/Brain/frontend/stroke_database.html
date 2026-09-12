@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke DB - Brain Disease AI Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadDatabase('stroke')">
+    <div class="background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <div class="glass-panel" style="border-color: rgba(79, 172, 254, 0.4);">
+            <header>
+                <div class="logo">
+                    <h1 style="background: linear-gradient(to right, #4facfe, #00f2fe);">⚡ Brain Stroke Register</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Dashboard</a></li>
+                        <li><a href="stroke_predict.html">Prediction Form</a></li>
+                        <li><a href="stroke_database.html" class="active" style="color: var(--secondary);">Database</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h2 style="color: #fff; font-size: 1.4rem;">Patient Clinical History</h2>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                <input type="text" id="search-id" placeholder="Enter Patient ID to search..." style="flex: 1; padding: 0.7rem; border-color: rgba(79, 172, 254, 0.4);" />
+                <button class="btn" onclick="searchPatient('stroke')" style="padding: 0.7rem 1.5rem; background: linear-gradient(45deg, #4facfe, #00f2fe);">Search</button>
+                <button class="btn outline" onclick="loadDatabase('stroke')" style="padding: 0.7rem 1.5rem; border-color: var(--secondary); color: var(--secondary);">Clear / Refresh</button>
+            </div>
+
+            <div class="loader" id="loader" style="border-top-color: var(--secondary);"></div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Full Name</th>
+                            <th>Age/Gender</th>
+                            <th>AI Diagnosis</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Data inserted dynamically here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="api.js"></script>
+</body>
+</html>

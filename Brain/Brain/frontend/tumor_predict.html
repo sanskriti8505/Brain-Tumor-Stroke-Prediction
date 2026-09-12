@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor AI - Prediction Module</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <div class="glass-panel">
+            <header>
+                <div class="logo">
+                    <h1>🧠 Brain Tumor AI</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Dashboard</a></li>
+                        <li><a href="tumor_predict.html" class="active">Prediction Form</a></li>
+                        <li><a href="tumor_database.html">Database</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <form id="tumor-form" onsubmit="submitPredictionForm(event, 'tumor')">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Patient Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age *</label>
+                        <input type="number" id="age" name="age" required placeholder="45" min="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gender">Gender *</label>
+                        <select id="gender" name="gender" required>
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Contact (Optional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1234567890">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email address (Optional)</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="symptoms">Key Symptoms (Optional)</label>
+                        <input type="text" id="symptoms" name="symptoms" placeholder="Headaches, Vision changes...">
+                    </div>
+
+                    <div class="form-group full-width" style="margin-top: 1rem;">
+                        <label>Brain MRI Upload *</label>
+                        <div class="file-upload" onclick="document.getElementById('image').click()">
+                            <p id="file-name" style="color: var(--primary);">Click or Drag to Upload MRI Image (.jpg, .png)</p>
+                            <input type="file" id="image" name="image" required accept=".jpg,.jpeg,.png" style="display: none;" onchange="updateFileName(this)">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: right;">
+                    <div class="loader" id="loader"></div>
+                    <button type="submit" class="btn" id="submit-btn" style="width: 200px;">Run Prediction AI</button>
+                </div>
+            </form>
+
+            <div class="result-box glass-panel" id="result-box" style="margin-top: 2rem; border-color: var(--primary);">
+                <!-- Prediction outcome goes here -->
+            </div>
+
+        </div>
+    </div>
+    <script src="api.js"></script>
+</body>
+</html>

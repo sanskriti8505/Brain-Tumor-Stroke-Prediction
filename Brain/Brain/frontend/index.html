@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Brain Disease AI Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Animated background -->
+    <div class="background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <div class="glass-panel">
+            <header>
+                <div class="logo">
+                    <h1>Neurolabs Admin Portal</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active">Dashboard</a></li>
+                        <li><a href="tumor_predict.html">Tumor AI</a></li>
+                        <li><a href="stroke_predict.html">Stroke AI</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: #fff;">System Overview</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+                    Welcome to the administrative portal for the AI-Powered Brain Disease Detection System. Select a module below to process new patient scans or view clinical history.
+                </p>
+            </div>
+
+            <div class="module-section" style="margin-bottom: 3rem;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem; font-size: 1.5rem;">🧠 Brain Tumor Module</h3>
+                <div class="dashboard-grid" style="margin-top: 1rem;">
+                    <!-- Brain Tumor Module -->
+                    <a href="tumor_predict.html" class="card glass-panel" style="padding: 2rem; border-color: var(--primary);">
+                        <h2 style="color: var(--primary);">New Prediction</h2>
+                        <p>Run diagnostic models on MRI scans to detect brain tumors.</p>
+                        <div style="margin-top: 1.5rem;">
+                            <button class="btn" style="width: 100%; margin-bottom: 0.5rem;">Start Analysis</button>
+                        </div>
+                    </a>
+                    
+                    <a href="tumor_database.html" class="card glass-panel" style="padding: 2rem;">
+                        <h2>📂 Tumor Register</h2>
+                        <p>View complete history, predictions, and MRI data for past brain tumor patients.</p>
+                        <div style="margin-top: 1.5rem;">
+                            <button class="btn outline" style="width: 100%;">View Database</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="module-section">
+                <h3 style="color: var(--secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem; font-size: 1.5rem;">⚡ Brain Stroke Module</h3>
+                <div class="dashboard-grid" style="margin-top: 1rem;">
+                    <!-- Brain Stroke Module -->
+                    <a href="stroke_predict.html" class="card glass-panel" style="padding: 2rem; border-color: var(--secondary);">
+                        <h2 style="color: var(--secondary);">New Prediction</h2>
+                        <p>Run diagnostic models on CT/MRI scans for stroke prediction.</p>
+                        <div style="margin-top: 1.5rem;">
+                            <button class="btn" style="width: 100%; margin-bottom: 0.5rem; background: linear-gradient(45deg, #0a0a1a, var(--secondary)); color: #fff;">Start Analysis</button>
+                        </div>
+                    </a>
+                    
+                    <a href="stroke_database.html" class="card glass-panel" style="padding: 2rem;">
+                        <h2>📂 Stroke Register</h2>
+                        <p>View complete history, predictions, and imagery for past stroke patients.</p>
+                        <div style="margin-top: 1.5rem;">
+                            <button class="btn outline" style="width: 100%;">View Database</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
