@@ -1,0 +1,5 @@
+*.zip
+__pycache__/
+*.pyc
+backend/app/stroke/uploads/
+backend/app/tumor/uploads/
